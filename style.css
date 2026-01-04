@@ -1,27 +1,32 @@
+/* فونت و راست‌چین کل سایت */
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-family: 'Vazir', Tahoma, sans-serif;
     margin: 0;
     background-color: #f3f0ff;
     color: #333;
+    direction: rtl;       /* راست به چپ */
+    text-align: right;    /* متن‌ها راست‌چین */
 }
 
+/* منو */
 nav {
     background-color: #6a0dad;
     color: white;
     padding: 15px 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* همه المان‌ها سمت راست */
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    gap: 40px;
 }
 
 nav h2 {
     margin: 0;
     font-size: 28px;
     letter-spacing: 1px;
+    color: white;
 }
 
 nav ul {
@@ -44,6 +49,14 @@ nav a:hover {
     transform: scale(1.1);
 }
 
+/* تیترها */
+h2, h4 {
+    color: #6a0dad;       /* بنفش */
+    text-align: right;    /* راست‌چین */
+    margin-bottom: 20px;
+}
+
+/* بخش‌ها */
 section {
     padding: 60px 20px;
     margin: 30px auto;
@@ -53,11 +66,18 @@ section {
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
+/* متن‌ها و لیست‌ها */
+section p, section ul {
+    text-align: right;
+    line-height: 1.6;
+}
+
+/* محصولات */
 .product-list {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
-    justify-content: center;
+    justify-content: flex-end;  /* کارت‌ها سمت راست */
 }
 
 .product {
@@ -65,10 +85,22 @@ section {
     padding: 20px;
     border-radius: 15px;
     min-width: 200px;
-    text-align: center;
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     transition: transform 0.3s, box-shadow 0.3s;
     font-weight: bold;
+
+    display: flex;
+    flex-direction: column;  /* عکس بالای متن */
+    align-items: flex-end;   /* همه محتوا سمت راست کارت */
+    text-align: right;       /* متن داخل کارت راست‌چین */
+}
+
+.product img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .product:hover {
@@ -78,13 +110,7 @@ section {
     background: linear-gradient(145deg, #b38fff, #d8b3ff);
 }
 
-.product img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
+/* فوتر */
 footer {
     text-align: center;
     padding: 25px;
@@ -95,6 +121,22 @@ footer {
     border-top-right-radius: 15px;
     box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
 }
+/* بلوک تیترها */
+h2, h4 {
+    color: #6a0dad;      /* بنفش */
+    text-align: right;    /* متن راست‌چین */
+    margin-bottom: 20px;
+    width: 100%;          /* عرض کامل */
+}
+
+/* اگر بلوک تیتر داخل section است، اضافه کنید */
+section h2, section h4 {
+    display: block;       /* تیترها بلوک هستند */
+    text-align: right;    /* متن داخل بلوک راست‌چین */
+    margin-right: 0;      /* از سمت راست شروع شود */
+}
+
+
 
 
 
